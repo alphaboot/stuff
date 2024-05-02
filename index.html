@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Steam Protocol Handler</title>
+</head>
+<body>
+    <script>
+        // Get the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Get the protocol parameter from the URL
+        const protocol = urlParams.get('protocol');
+        const appid = urlParams.get('app_id');
+
+        // Check if protocol and appId are valid
+        if (protocol && appid) {
+            // Construct the Steam protocol link based on the specified protocol
+            const steamLink = `steam://${protocol}/${appid}`;
+
+            // Redirect to the Steam protocol link
+            window.location.href = steamLink;
+        } else {
+            // Handle invalid parameters
+            alert('Invalid parameters');
+        }
+    </script>
+</body>
+</html>
